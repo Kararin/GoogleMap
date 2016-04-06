@@ -8,10 +8,21 @@ body {
 
 .map {
     height: 100%;
-    width: 50%;
+    width: 80%;
 }
 
 .content {
     width: 100%;
     height: 100%;
 }
+
+.panel {
+    float: left;
+    width: 20%;
+    margin-bottom: 10px;
+}
+
+.subpanel {
+    width: 100%;
+}
+

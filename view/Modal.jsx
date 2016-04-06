@@ -1,30 +1,29 @@
 import React from 'react';
-import {Modal, Input, Button} from 'react-bootstrap';
+import {Panel, Input, Button} from 'react-bootstrap';
 
 export default ({
     show,
-    onClickHandler,
+    createMarker,
     onClose
 }) => {
     var input;
 
     return (
-        <div>
-            <Modal show={show}>
-            <Modal.Header>
-                <Modal.Title>Mark title</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
+        <div style = {{
+            display: show? 'block': 'none'
+        }}>
+            <Panel className = "subpanel" header="Add marker">
                 <Input
-                type="text"
-                label="Input text for mark"
-                ref = {c => input = c}/>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button onClick={onClose}>Close</Button>
-                <Button onClick={(e) => {onClickHandler(input.getValue())}}>Add</Button>
-            </Modal.Footer>
-            </Modal>
+                    type="text"
+                    label="Input text for mark"
+                    ref = {c => input = c}/>
+
+                <Button onClick = {onClose}>Close</Button>
+                <Button onClick = {e => {
+                    createMarker(input.getValue());
+                    onClose();
+                }}>Add</Button>
+            </Panel>
         </div>
     )
 }

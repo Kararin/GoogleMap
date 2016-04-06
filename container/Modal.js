@@ -1,19 +1,18 @@
 import {connect} from 'react-redux';
 import Modal from '../view/Modal';
-import {toggleModal} from '../actions';
+import {toggleModal, createMarker} from '../actions';
 
 const mapStateToProps = (state) => {
+    var {map, selectPos} = state;
+
     return {
-        show: state.modalShow
+        show: state.modalShow,
+        createMarker: createMarker(map, selectPos)
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        onClickHandler: (title) => {
-            dispatch(toggleModal(false));
-            // addMarker(title);
-        },
         onClose: () => {
             dispatch(toggleModal(false));
         }

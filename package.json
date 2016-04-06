@@ -19,7 +19,8 @@
     "react-bootstrap": "^0.28.5",
     "react-dom": "^0.14.8",
     "react-redux": "^4.4.1",
-    "redux": "^3.3.1"
+    "redux": "^3.3.1",
+    "redux-thunk": "^2.0.1"
   },
   "jshintConfig": {
     "esversion": 6
